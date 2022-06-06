@@ -17,7 +17,6 @@ public:
 		Tail = nullptr;
 	}
 
-
 	~List()
 	{
 		if (Head != nullptr)
@@ -174,24 +173,19 @@ public:
 		return false;
 	}
 
-	//bool search(int value, Node<T>* head = Head)
-	//{
-	//	//Node<T>* temp = Head;
+	void reverse()
+	{
+		Node<T>* prev = nullptr;
+		Node<T>* current = Head;
+		Node<T>* next = nullptr;
 
-	//	if (head == nullptr)
-	//	{
-	//		return false;
-	//	}
-	//	
-	//	if (value == head->data)
-	//	{
-	//		return true;
-	//	}
-	//	else
-	//	{
-	//		head = head->next;
-	//		return search(head->data, head);
-	//	}
-	//	
-	//}
+		while (current != nullptr)
+		{
+			next = current->next;
+			current->next = prev;
+			prev = current;
+			current = next;
+		}
+		Head = prev;
+	}
 };
