@@ -139,7 +139,6 @@ public:
 		if (index == 0)
 		{
 			temp = Head->next;
-			delete Head;
 			Head = temp;
 			return;
 		}
