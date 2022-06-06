@@ -155,4 +155,25 @@ public:
 		}
 		temp->next = temp->next->next;
 	}
+
+	//bool search(int value, Node<T>* head = Head)
+	//{
+	//	//Node<T>* temp = Head;
+
+	//	if (head == nullptr)
+	//	{
+	//		return false;
+	//	}
+	//	
+	//	if (value == head->data)
+	//	{
+	//		return true;
+	//	}
+	//	else
+	//	{
+	//		head = head->next;
+	//		return search(head->data, head);
+	//	}
+	//	
+	//}
 };
