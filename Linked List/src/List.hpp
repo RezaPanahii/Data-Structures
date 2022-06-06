@@ -156,6 +156,19 @@ public:
 		temp->next = temp->next->next;
 	}
 
+	bool search(int value)
+	{
+		Node<T>* temp = Head;
+		while (temp != nullptr)
+		{
+			if (value == temp->data)
+				return true;
+
+			temp = temp->next;
+		}
+		return false;
+	}
+
 	//bool search(int value, Node<T>* head = Head)
 	//{
 	//	//Node<T>* temp = Head;
