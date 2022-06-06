@@ -138,8 +138,10 @@ public:
 		Node<T>* temp;
 		if (index == 0)
 		{
-			temp = Head->next;
-			Head = temp;
+			temp = Head;
+			Head = Head->next;
+			temp->next = nullptr;
+			delete temp;
 			return;
 		}
 
@@ -153,7 +155,10 @@ public:
 		{
 			Tail = temp;
 		}
+		Node<T>* temp2 = temp->next;
 		temp->next = temp->next->next;
+		temp2->next = nullptr;
+		delete temp2;
 	}
 
 	bool search(int value)
