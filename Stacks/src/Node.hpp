@@ -1,6 +1,12 @@
+#pragma once
+#include "Stack.hpp"
+
 template <typename T>
 class Node
 {
+	template<typename R>
+	friend class stack;
+
 	T data;
 	Node<T>* next;
 
