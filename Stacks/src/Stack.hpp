@@ -49,4 +49,12 @@ public:
 		temp->next = nullptr;
 		delete temp;
 	}
+
+	void top()
+	{
+		if (Head != nullptr)
+		{
+			std::cout << "Top element : " << Head->data << std::endl;
+		}
+	}
 };
