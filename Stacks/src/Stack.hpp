@@ -32,13 +32,8 @@ public:
 	void push(const T& value)
 	{
 		Node<T>* node = new Node<T>(value);
-		if (Head == nullptr)
-			Head = node;
-		else
-		{
-			node->next = Head;
-			Head = node;
-		}
+		node->next = Head;
+		Head = node;
 	}
 
 	void pop()
