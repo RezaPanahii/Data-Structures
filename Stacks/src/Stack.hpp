@@ -3,17 +3,17 @@
 #include "Node.hpp"
 
 template <typename T>
-class stack
+class Stack
 {
 	Node<T>* Head;
 
 public:
-	stack()
+	Stack()
 	{
 		Head = nullptr;
 	}
 
-	~stack()
+	~Stack()
 	{
 		if (Head != nullptr)
 			delete Head;

@@ -5,7 +5,7 @@ template <typename T>
 class Node
 {
 	template<typename R>
-	friend class stack;
+	friend class Stack;
 
 	T data;
 	Node<T>* next;
