@@ -38,11 +38,14 @@ public:
 
 	void pop()
 	{
-		Node<T>* temp = Head;
-		Head = Head->next;
+		if (Head != nullptr)
+		{
+			Node<T>* temp = Head;
+			Head = Head->next;
 
-		temp->next = nullptr;
-		delete temp;
+			temp->next = nullptr;
+			delete temp;
+		}
 	}
 
 	void top()
