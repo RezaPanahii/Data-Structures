@@ -5,7 +5,7 @@ class Node
 	Node<T>* next;
 
 public:
-	Node(T& data)
+	Node(const T& data)
 	{
 		this->data = data;
 		next = nullptr;
@@ -17,17 +17,17 @@ public:
 			delete next;
 	}
 
-	T& getData()
+	T& getData() const
 	{
 		return data;
 	}
 
-	bool operator==(const Node& node)
+	bool operator==(const Node& node) const
 	{
 		return (this->data == node.data and this->next == node.next);
 	}
 
-	bool operator!=(const Node& node)
+	bool operator!=(const Node& node) const
 	{
 		return !(*this == node);
 	}
