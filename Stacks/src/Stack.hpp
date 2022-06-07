@@ -1,4 +1,5 @@
 #include <vector>
+#include "Node.hpp"
 
 template <typename T>
 class stack
@@ -13,5 +14,18 @@ public:
 
 	~stack()
 	{
+		if (Head != nullptr)
+			delete Head;
+	}
+
+	void print()
+	{
+		Node<T>* temp = Head;
+		while (temp != nullptr)
+		{
+			std::cout << temp->data << "->";
+			temp = temp->next;
+		}
+		std::cout << std::endl;
 	}
 };
