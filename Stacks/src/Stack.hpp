@@ -3,11 +3,12 @@
 template <typename T>
 class stack
 {
-	std::vector<T> stack;
+	Node<T>* Head;
 
 public:
 	stack()
 	{
+		Head = nullptr;
 	}
 
 	~stack()
