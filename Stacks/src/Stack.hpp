@@ -40,4 +40,13 @@ public:
 			Head = node;
 		}
 	}
+
+	void pop()
+	{
+		Node<T>* temp = Head;
+		Head = Head->next;
+
+		temp->next = nullptr;
+		delete temp;
+	}
 };
