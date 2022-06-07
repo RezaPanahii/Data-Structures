@@ -24,10 +24,9 @@ public:
 		Node<T>* temp = Head;
 		while (temp != nullptr)
 		{
-			std::cout << temp->data << "->";
+			std::cout << temp->data << std::endl;
 			temp = temp->next;
 		}
-		std::cout << std::endl;
 	}
 
 	void push(const T& value)
