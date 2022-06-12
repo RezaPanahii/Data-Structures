@@ -27,3 +27,13 @@ void printPreorder(Node* root)
 	printPreorder(root->left);
 	printPreorder(root->right);
 }
+
+void printInorder(Node* root)
+{
+	if (root == nullptr)
+		return;
+
+	printInorder(root->left);
+	std::cout << root->data << " ";
+	printInorder(root->right);
+}
