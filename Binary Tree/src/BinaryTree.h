@@ -37,3 +37,13 @@ void printInorder(Node* root)
 	std::cout << root->data << " ";
 	printInorder(root->right);
 }
+
+void printPostorder(Node* root)
+{
+	if (root == nullptr)
+		return;
+	
+	printPostorder(root->left);
+	printPostorder(root->right);
+	std::cout << root->data << " ";
+}
