@@ -94,8 +94,10 @@ Node* levelOrderBuild()
 		Node* front = q.front();
 		q.pop();
 
-		int left_child_value, right_child_value;
-		std::cin >> left_child_value >> right_child_value;
+		int left_child_value;
+		int right_child_value;
+		std::cin >> left_child_value;
+		std::cin >> right_child_value;
 
 		if (left_child_value != -1)
 		{
