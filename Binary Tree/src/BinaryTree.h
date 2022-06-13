@@ -77,6 +77,7 @@ void levelOrderPrint(Node* root)
 		}
 	}
 	return;
+<<<<<<< HEAD
 }
 
 Node* levelOrderBuild()
@@ -110,3 +111,6 @@ Node* levelOrderBuild()
 	}
 	return root;
 }
+=======
+}
+>>>>>>> 39d98f95014752f541478465b87d0cd3021ee0c4
