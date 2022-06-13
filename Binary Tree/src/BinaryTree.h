@@ -123,3 +123,18 @@ int height(Node* root)
 
     return std::max(left_height, right_height) + 1;
 }
+
+int diameter(Node* root)
+{
+	if (root == nullptr)
+		return 0;
+
+	// if diameter goes through root
+	int d1 = height(root->left) + height(root->right);
+	// left side of the root
+	int d2 = diameter(root->left);
+	// right side of the root
+	int d3 = diameter(root->right);
+
+	return std::max(d1, std::max(d2,d3));
+}
