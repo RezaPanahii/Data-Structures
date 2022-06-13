@@ -124,17 +124,34 @@ int height(Node* root)
     return std::max(left_height, right_height) + 1;
 }
 
-int diameter(Node* root)
+struct HDpair
 {
-	if (root == nullptr)
-		return 0;
+	int height;
+	int diameter;
+};
 
-	// if diameter goes through root
-	int d1 = height(root->left) + height(root->right);
-	// left side of the root
-	int d2 = diameter(root->left);
-	// right side of the root
-	int d3 = diameter(root->right);
+HDpair diameter(Node* root)
+{
+	HDpair p;
 
-	return std::max(d1, std::max(d2,d3));
+	// base case
+	if (root == nullptr){
+		p.height = p.diameter = 0;
+		return p;
+	}
+	
+	// recursive case
+	HDpair left = diameter(root->left);
+	HDpair right = diameter(root->right);
+
+	// calculate height
+	p.height = std::max(left.height, right.height) + 1;
+	
+	// calculate diameter
+	int d1 = left.height + right.height;
+	int d2 = left.diameter;
+	int d3 = right.diameter;
+	p.diameter = std::max(d1, std::max(d2,d3));
+
+	return p;
 }
