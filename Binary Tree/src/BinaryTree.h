@@ -78,3 +78,35 @@ void levelOrderPrint(Node* root)
 	}
 	return;
 }
+
+Node* levelOrderBuild()
+{
+	int data;
+	std::cin >> data;
+
+	Node* root = new Node(data);
+
+	std::queue<Node*> q;
+	q.push(root);
+
+	while(!q.empty())
+	{
+		Node* front = q.front();
+		q.pop();
+
+		int left_child_value, right_child_value;
+		std::cin >> left_child_value >> right_child_value;
+
+		if (left_child_value != -1)
+		{
+			front->left = new Node(left_child_value);
+			q.push(front->left);
+		}
+		if (right_child_value != -1)
+		{
+			front->right = new Node(right_child_value);
+			q.push(front->right);
+		}
+	}
+	return root;
+}
